@@ -711,7 +711,7 @@ path:hover{
 
 
 .grey-bg {
-  background: #efefef;
+  /* background: #edf8fe */
 }
 
 .flex-wrapper {
@@ -769,63 +769,20 @@ a.blog-link {
 }
 .blog-link {
   font-weight: 700;
-  margin-left: 60px;
   font-family: 'Clan Medium', sans-serif;
   letter-spacing: 0.5px;
   color: black;
   text-decoration: none;
 }
-.blog-link::before {
-      content: '';
-      position: absolute;
-      transform: translateX(-60px) translateY(-14px);
-      width: 3rem;
-      height: 3rem;
-      border-radius: 100%;
-      background:#ced4da;
-      transition: .1s background linear;
-}
-.blog-link:hover::before {
-      content: '';
-      position: absolute;
-      transform: translateX(-60px) translateY(-14px);
-      width: 3rem;
-      height: 3rem;
-      border-radius: 100%;
-      background: #E60032; 
-      transition: .1s background linear;
-}
-.blog-link::after {
-      background-image: url(../img/arrow-bullet.svg);
-      transform: translateY(2px) translateX(-1px) rotate(180deg);
-      background-size: contain;
-      content: ' ';
-      width: 8px;
-      position: absolute;
-      height: 13px;
-      left: 20px;
-}
-.blog-link:hover::after {
-      background-image: url(../img/arrow-bullet-white.svg);
-      background-size: contain;
-      transform: translateY(2px) translateX(-1px) rotate(180deg);
-      content: ' ';
-      width: 8px;
-      position: absolute;
-      height: 13px;
-      left: 20px;
-}
+
 a.blog-link {
-  padding-bottom: 4%;
   text-decoration: none ;
-  color: black;
+  color: rgb(28, 12, 12);
 }
 a.blog-link:hover {
-  padding-bottom: 4%;
   text-decoration: none ;
   color: black;
 } 
-
 
 h4.bold {
   font-weight: bold;
@@ -837,3 +794,89 @@ h4.bold {
     margin-bottom: 2rem;
     color: #000000; 
   }
+
+/* ---- Global color scheme ---- */
+/* Base / body text */
+body,
+.copy,
+p,
+li,
+span,
+a {
+  color: rgb(12, 22, 59);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1#title,
+.headline-01,
+.headline-02,
+.headline-02b,
+.headline-03,
+.data-title {
+  color: rgb(32, 55, 139);
+}
+
+/* ---- Language switcher ---- */
+.lang-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.odis-logo-link {
+  display: inline-flex;
+  color: rgb(32, 55, 139);
+}
+
+.odis-logo {
+  display: block;
+  height: 55px;
+  width: auto;
+}
+
+.odis-logo-link:hover {
+  color: #e60032;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-link {
+  display: inline-block;
+  padding: 4px 10px;
+  font-weight: 700;
+  font-family: 'Clan Medium', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  text-decoration: none;
+  color: rgb(32, 55, 139);
+  border: 2px solid rgb(32, 55, 139);
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.lang-link + .lang-link {
+  margin-left: 2px;
+}
+
+.lang-link.is-active {
+  color: #fff;
+  background-color: rgb(32, 55, 139);
+}
+
+.lang-link:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(32, 55, 139);
+}

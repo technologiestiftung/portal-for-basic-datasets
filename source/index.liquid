@@ -6,11 +6,14 @@ pagination:
   alias: startpage
   size: 1
 pagedata:
-  - dest: de
-    locale: de
-  - dest: en
-    locale: en
   - dest: root
     locale: de
+    assetPrefix: ""
+  - dest: de
+    locale: de
+    assetPrefix: "../"
+  - dest: en
+    locale: en
+    assetPrefix: "../"
 permalink: "{% if startpage.dest != 'root' %}{{ startpage.dest }}/{% endif %}index.html"
 ---

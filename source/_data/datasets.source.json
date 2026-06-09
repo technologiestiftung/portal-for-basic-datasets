@@ -1,0 +1,62 @@
+[
+  {
+    "title": { "de": "Bezirke", "en": "Districts" },
+    "preview": "bezirke",
+    "wfs": "https://wfsexplorer.odis-berlin.de/?wfs=https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Falkis_bezirke&layer=alkis_bezirke%3Abezirksgrenzen"
+  },
+  {
+    "title": { "de": "Ortsteile", "en": "Berlin's city parts" },
+    "preview": "ortsteile",
+    "wfs": "https://wfsexplorer.odis-berlin.de/?wfs=https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Falkis_ortsteile&layer=alkis_ortsteile%3Aortsteile"
+  },
+  {
+    "title": { "de": "LOR-Bezirksregionen (ab 2021)", "en": "Statistical Areas - (LOR) - District-Areas (2021)" },
+    "preview": "lor-bezirksregionen-2021",
+    "wfs": "bezirke=&wfs=https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Flor_2021%3Frequest%3DGetCapabilities%26service%3DWFS&layer=lor_2021%3Ab_lor_bzr_2021"
+  },
+  {
+    "title": { "de": "LOR Planungsräume (ab 2021)", "en": "Statistical Areas - (LOR) - Planning-Areas (2021)" },
+    "preview": "lor-planungsraeume-2021",
+    "wfs": "bezirke=&wfs=https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Flor_2021%3Frequest%3DGetCapabilities%26service%3DWFS&layer=lor_2021%3Aa_lor_plr_2021"
+  },
+  {
+    "title": { "de": "LOR Prognoseräume (ab 2021)", "en": "Statistical Areas - (LOR) - Prediction-Areas (2021)" },
+    "preview": "lor-prognoseraeume-2021",
+    "wfs": "bezirke=&wfs=https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Flor_2021%3Frequest%3DGetCapabilities%26service%3DWFS&layer=lor_2021%3Ac_lor_pgr_2021"
+  },
+  {
+    "title": { "de": "PLZ", "en": "PLZ - Berlin's Postcodes" },
+    "preview": "plz",
+    "wfs": "https://wfsexplorer.odis-berlin.de/?wfs=https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Fpostleitzahlen&layer=postleitzahlen%3Apostleitzahlen"
+  },
+  {
+    "title": { "de": "Block und Teilblockflächen", "en": "Block- and Sub-Block-Areas" },
+    "preview": "block-und-teilblockflaechen",
+    "wfs": "https://gdi.berlin.de/services/wfs/blockseiten?request=GetCapabilities&service=WFS"
+  },
+  {
+    "title": { "de": "Detailnetz Bauwerke", "en": "Traffic network - build structures" },
+    "preview": "detailnetz-bauwerke",
+    "wfs": "bezirke=&wfs=https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Fdetailnetz%3Frequest%3DGetCapabilities%26service%3DWFS&layer=detailnetz%3Ab_bauwerke"
+  },
+  {
+    "title": { "de": "Gebäude", "en": "Buildings" },
+    "preview": "gebaeude",
+    "wfs": "bezirke=&wfs=+https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Falkis_gebaeude%3Frequest%3DGetCapabilities%26service%3DWFS"
+  },
+  {
+    "title": { "de": "Flurstücke", "en": "Land parcels" },
+    "preview": "flurstuecke",
+    "wfs": "bezirke=&wfs=https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Falkis_flurstuecke%3Frequest%3DGetCapabilities%26service%3DWFS+"
+  },
+  {
+    "title": { "de": "Detailnetz Straßenabschnitte", "en": "Traffic network - street segments" },
+    "preview": "detailnetz-strassenabschnitte",
+    "wfs": "bezirke=&wfs=https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Fdetailnetz%3Frequest%3DGetCapabilities%26service%3DWFS&layer=detailnetz%3Ac_strassenabschnitte"
+  },
+  {
+    "title": { "de": "Verkehrs-/Teilverkehrszellen (2023)", "en": "Sub Traffic Cells" },
+    "preview": "verkehrs-teilverkehrszellen-2023",
+    "wfs": "bezirke=&wfs=+https%3A%2F%2Fgdi.berlin.de%2Fservices%2Fwfs%2Ftvz%3Frequest%3DGetCapabilities%26service%3DWFS+"
+  }
+]
