@@ -1,2 +1,21 @@
 [build]
   node_version = "16.0.0"
+
+# Redirect any old dataset sub-pages (e.g. reached via Google) and any
+# unknown path to the main page.
+[[redirects]]
+  from = "/de/*"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/*"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 301

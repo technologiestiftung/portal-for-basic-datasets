@@ -4,25 +4,24 @@ layout: layouts/default.liquid
 ---
 <header>
     <div class="section bl">
-        <a class="blog-link" href="https://odis-berlin.de/ressourcen/">Zurück zur ODIS-Webseite</a>
+        <a class="blog-link" href="https://odis-berlin.de/">Zur ODIS-Webseite</a>
       </div>
     <div class="section pb-6 pt-6" id="intro">
         <p class="headline-05">Ein Dienst der Open Data Informationsstelle Berlin (ODIS)
         </p>
-        <p style="border-color: #E60032; border-width: 4px; border-style:solid; padding: 1.5rem; line-height: 1.6; border-radius:4px; margin-bottom:2rem">
-            <span style="font-weight:bold">Hinweis! </span>Diese Webseite wird seit 2022 nicht mehr geupdatet. 
-            Die unten stehenden Daten sind eventuell in neuerer Version vorhanden. Aktuelle Daten zum Direktdownload (GeoJSON) finden sie im neuen Projekt 
-            <a href="https://geo-explorer.netlify.app" style="font-weight:bold">Geoexplorer</a>. Die stets aktuellsten Geodatendienste (WFS und WMS)
-             finden sie im <a href="http://fbinter.stadt-berlin.de/fb/index.jsp">Geoportal</a> des Landes Berlin. 
-        </p>
         <div id="teaser" style="padding-top:1rem">
-        <h1 id="title"><img src="/assets/images/logo@2x.png" style="padding-top:26px" alt="Daten">Daten</h1>
+        <h1 id="title"><img src="assets/images/logo@2x.png" style="padding-top:26px" alt="Daten">Daten</h1>
     <p class="headline-02b">
         Basisdatensätze von Berlin
       </p></div>
-        <p class="headline-04"> In diesem Datenportal stellt ODIS aufbereitete und besonders relevante Geobasisdatensätze zur Verfügung. Der Fokus liegt dabei auf Geodatensätzen, die aus unserer Sicht häufig gefragt sind und für viele Datenanalysen und Visualisierungen für den Raum Berlin genutzt werden. Diese werden hier in den gängigen Formaten bereitgestellt, die für die meisten Datennutzer*innen besonders leicht nutzbar und weiter zu verarbeiten sind. 
-            Diese Datensammlung wird regelmäßig gepflegt und aktualisiert. Unter Umständen bestehen aber Abweichungen zur originären Quelle, dem <a href="http://fbinter.stadt-berlin.de/fb/index.jsp">FIS Broker</a>, der stets die aktuellsten verfügbaren Daten führt.
-            Weitere offene Daten finden Sie auf <a href="https://daten.berlin.de/">daten.berlin.de</a>, dem zentralen Datenportal des Landes Berlin.
+        <p class="headline-04"> 
+        Einige offene Geodatensätze sind besonders gefragt und werden für Datenanalysen und Visualisierungen für den Raum Berlin häufig genutzt. 
+Als <a target="_blank" href="https://odis-berlin.de/">Open Data Informationsstelle Berlin</a>, bieten wir auf dieser Seite eine Liste relevanter Geobasisdatensätze aus dem <a target="_blank" href="https://gdi.berlin.de/viewer/main/#">Geoportal Berlin</a> an und machen diese mithilfe unseres Tools WFS-Explorer zugänglicher und leichter nutzbar.
+
+Weitere offene Daten finden Sie auf <a target="_blank" href="https://daten.berlin.de">daten.berlin.de</a>, dem zentralen Open Data Portal des Landes Berlin.
+
+Falls ein besonders relevanter Datensatz fehlen sollte, freuen wir uns über einen Hinweis an: <a href="mailto:odis@ts.berlin">odis@ts.berlin</a>
+        
     </div>
 </header>
 <main>
@@ -31,34 +30,26 @@ layout: layouts/default.liquid
       <div id="list">
           <ul>
               {% for dataset in datasets %}
-              {% if dataset.lang == startpage.locale %} 
               <li>
-                <a href="{{ site.baseUrl }}/{{ startpage.locale }}/dataset/{{ dataset.folder }}">
-                    {% if dataset.hasThumb %}
-                    <img src="{{ site.s3BaseUrl }}{{ dataset.folder }}thumb.jpg" alt="{{ dataset.meta.meta[startpage.locale].title }}" />
+                <a href="{{ dataset.url }}" target="_blank" rel="noopener noreferrer">
+                    {% if dataset.preview %}
+                    <img src="{{ dataset.preview }}" alt="{{ dataset.title }}" />
                     {% else %}
-                    <img src="{{ site.baseUrl }}/assets/images/file@2x.png" alt="{{ dataset.meta.meta[startpage.locale].title }}" />
+                    <img src="assets/images/file@2x.png" alt="{{ dataset.title }}" />
                     {% endif %}
-                    <span class="data-title">{{ dataset.meta.meta[startpage.locale].title }}</span>
-                    <span class="col1">
-                        <span class="key">{% if startpage.locale == "en" %}Formats{% else %}Formate{% endif %}</span>:<span class="value">
-                            {% for format in dataset.formats %}
-                            {% if site.formatter[format.format] %}{{ site.formatter[format.format] }}{% else %}{{ format.format }}{% endif %}{% if forloop.last == false %},{% endif %}{% endfor %}
-                        </span><br /><br />
-                        {% if dataset.meta.meta.geolevel.length > 0 %}
-                        <span class="key">{% if startpage.locale == "en" %}Resolution{% else %}Auflösung{% endif %}</span>: <span class="value">{% if site.formatter.geo[dataset.lang][dataset.meta.meta.geolevel] %}{{ site.formatter.geo[dataset.lang][dataset.meta.meta.geolevel] }}{% else %}{{ dataset.meta.meta.geolevel }}{% endif %}</span>
-                        {% endif %}
-                    </span>
-                    <span class="col2">
-                        <span class="key">{% if startpage.locale == "en" %}Keywords{% else %}Stichworte{% endif %}</span>: <span class="value">{{ dataset.meta.meta[startpage.locale].keywords | join: "," }}</span><br /><br />
-                        {% if dataset.meta.meta.temporal.size > 2 %}
-                        <span class="key">{% if startpage.locale == "en" %}Years{% else %}Jahre{% endif %}</span>: <span class="value">{{ dataset.meta.meta.temporal[0] }}-{{ dataset.meta.meta.temporal[1] }}</span>
-                        {% endif %}
+                    <span class="data-title">{{ dataset.title }}</span>
+                    <span class="data-action">
+                        {% if startpage.locale == "en" %}Open dataset in WFS-Explorer{% else %}Datensatz im WFS-Explorer öffnen{% endif %}
+                        <svg class="external-link-icon" width="20" height="20" viewBox="0 0 21 20" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round">
+                                <path stroke-width=".87" d="M14.5 10.718v5.797c0 1.09-.868 1.986-1.944 1.986H3.444c-1.069 0-1.945-.887-1.945-1.986V7.487c0-1.091.868-1.986 1.945-1.986h5.947"></path>
+                                <path stroke-linejoin="round" d="M6 14 18 2m.473 7.5v-8h-8"></path>
+                            </g>
+                        </svg>
                     </span>
                     <hr class="clear" />
                 </a>
               </li>
-              {% endif %}
               {% endfor %}
           </ul>
       </div>

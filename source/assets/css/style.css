@@ -218,17 +218,15 @@ hr.clear.odclear-half {
 #list > ul > li {
   max-width: 2200px;
   display: block;
-  /* border-top: 2px solid rgb(24, 61, 143); */
-  padding-top: 30px;
-  padding-bottom: 10px;
+  border: 2px solid rgb(32, 55, 139);
   background-color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  box-shadow: 10px 10px 0 0 #edf8fe;
+
 }
 
 #list img {
   width: 108px;
-  margin: 15px 10px;
-  padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
   float: left;
@@ -247,6 +245,9 @@ hr.clear.odclear-half {
 }
 
 #list a {
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 10px;
   text-decoration: none;
   color: #000;
 }
@@ -256,13 +257,24 @@ hr.clear.odclear-half {
   opacity: 0.5;
 }
 
-#list span.col1,
-#list span.col2 {
-  display: block;
+#list span.data-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding-top: 10px;
   padding-right: 10px;
-  font-size: 12px;
+  font-size: 16px;
   text-align: left;
+  color: rgb(32, 55, 139);
+}
+
+#list span.data-action .external-link-icon {
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  padding: 0;
+  float: none;
+  flex: none;
 }
 
 ul.meta-list,
@@ -326,8 +338,6 @@ ul.meta-list .value {
     clear: none;
     width: 60%;
   }
-  #list span.col1 {
-    width: 77%;}
 
   #list {
       width: 88%;
@@ -356,12 +366,6 @@ ul.meta-list .value {
 }
 
 
-@media (max-width: 1200px) {
-  #list span.col2 {
-    display: none;
-  }
-}
-
 @media (min-width: 320px) and (max-width: 550px) {
   #list img{
     display:none;
@@ -369,8 +373,7 @@ ul.meta-list .value {
   .data-title {
     padding-left: 20px;
   }
-  #list span.col1,
-  #list span.col2 {
+  #list span.data-action {
     padding-left: 20px;
   }
   #teaser.detail img {
