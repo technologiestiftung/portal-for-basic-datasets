@@ -1,7 +1,19 @@
 ---
 eleventyExcludeFromCollections: true
 layout: layouts/startpage.liquid
-permalink: "index.html"
-startpage:
-  locale: de
+pagination:
+  data: pagedata
+  alias: startpage
+  size: 1
+pagedata:
+  - dest: root
+    locale: de
+    assetPrefix: ""
+  - dest: de
+    locale: de
+    assetPrefix: "../"
+  - dest: en
+    locale: en
+    assetPrefix: "../"
+permalink: "{% if startpage.dest != 'root' %}{{ startpage.dest }}/{% endif %}index.html"
 ---

@@ -1,20 +1,22 @@
 [build]
   node_version = "16.0.0"
 
-# Redirect any old dataset sub-pages (e.g. reached via Google) and any
-# unknown path to the main page.
+# Old dataset sub-pages (e.g. reached via Google) no longer exist.
+# Redirect them to the localized start page.
 [[redirects]]
-  from = "/de/*"
-  to = "/"
+  from = "/de/dataset/*"
+  to = "/de/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/en/*"
-  to = "/"
+  from = "/en/dataset/*"
+  to = "/en/"
   status = 301
   force = true
 
+# Any other unknown path falls back to the (German) main page.
+# This is NOT forced, so existing files (/, /de/, /en/, assets, ...) still serve.
 [[redirects]]
   from = "/*"
   to = "/"

@@ -821,3 +821,62 @@ h1#title,
 .data-title {
   color: rgb(32, 55, 139);
 }
+
+/* ---- Language switcher ---- */
+.lang-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.odis-logo-link {
+  display: inline-flex;
+  color: rgb(32, 55, 139);
+}
+
+.odis-logo {
+  display: block;
+  height: 55px;
+  width: auto;
+}
+
+.odis-logo-link:hover {
+  color: #e60032;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-link {
+  display: inline-block;
+  padding: 4px 10px;
+  font-weight: 700;
+  font-family: 'Clan Medium', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  text-decoration: none;
+  color: rgb(32, 55, 139);
+  border: 2px solid rgb(32, 55, 139);
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.lang-link + .lang-link {
+  margin-left: 2px;
+}
+
+.lang-link.is-active {
+  color: #fff;
+  background-color: rgb(32, 55, 139);
+}
+
+.lang-link:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(32, 55, 139);
+}
