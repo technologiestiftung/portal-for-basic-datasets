@@ -39,14 +39,15 @@ layout: layouts/default.liquid
       <div id="list">
           <ul>
               {% for dataset in datasets %}
+              {% assign dsTitle = dataset.title[startpage.locale] %}
               <li>
                 <a href="{{ dataset.url }}" target="_blank" rel="noopener noreferrer">
                     {% if dataset.preview %}
-                    <img src="{{ a }}{{ dataset.preview }}" alt="{{ dataset.title }}" />
+                    <img src="{{ a }}{{ dataset.preview }}" alt="{{ dsTitle }}" />
                     {% else %}
-                    <img src="{{ a }}assets/images/file@2x.png" alt="{{ dataset.title }}" />
+                    <img src="{{ a }}assets/images/file@2x.png" alt="{{ dsTitle }}" />
                     {% endif %}
-                    <span class="data-title">{{ dataset.title }}</span>
+                    <span class="data-title">{{ dsTitle }}</span>
                     <span class="data-action">
                         {{ t.openDataset }}
                         <svg class="external-link-icon" width="20" height="20" viewBox="0 0 21 20" aria-hidden="true">
